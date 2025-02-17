@@ -35,7 +35,7 @@ const courses = [
 const documents = [
   {
     title: "Sistemas operativos de red",
-    link: "./sena/sistemas-operativos-de-red/1-introduccion",
+    link: "./docs/sena/sistemas-operativos-de-red/1-introduccion",
     images: {
       light: "/images/index-images/documentacion/001.svg",
       dark: "/images/index-images/documentacion/001.svg"
@@ -59,7 +59,7 @@ const documents = [
   },
   {
     title: "Contenedores",
-    link: "./sena/contenedores/1-introduccion",
+    link: "./docs/sena/contenedores/1-introduccion",
     images: {
       light: "/images/index-images/documentacion/004.svg",
       dark: "/images/index-images/documentacion/004.svg"
@@ -67,7 +67,7 @@ const documents = [
   },
   {
     title: "Virtualización",
-    link: "./sena/virtualizacion/1-introduccion",
+    link: "./docs/sena/virtualizacion/1-introduccion",
     images: {
       light: "/images/index-images/documentacion/003.svg",
       dark: "/images/index-images/documentacion/003.svg"

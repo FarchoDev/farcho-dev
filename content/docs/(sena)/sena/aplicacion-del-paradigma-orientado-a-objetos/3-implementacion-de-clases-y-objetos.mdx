@@ -1,0 +1,350 @@
+---
+title: Implementación de clases y objetos
+full: false
+---
+
+Los principales elementos en un lenguaje de programación son las clases, debido a que se usan para todas las operaciones lógicas en un desarrollo. Se puede decir que son estructuras o plantillas que representan objetos del mundo real.
+
+Por su parte, los objetos pueden ser cosas, lugares o personas y son de tipo físico o conceptuales. En general las clases poseen propiedades, comportamientos y relaciones con otras clases.
+
+Java determina en sus estándares de codificación convenciones para nombres de clases, métodos y atributos. Para las clases se define lo siguiente:
+
+1. La primera letra debe ser mayúscula.
+2. Utilizar nomenclatura camelCase (por ejemplo: un nombre compuesto por varias palabras: clase "CuentaAhorros").
+3. Los nombres deben ser sustantivos
+
+**Estructura de una clase en Java:**
+
+Una clase en java se compone por las siguientes declaraciones:
+
+- Paquete
+- Comentarios
+- Definición de clases
+- Atributos
+- Constructores
+- Métodos
+
+**Ejemplo:**
+
+Estructura:
+
+~~~
+public class NombreDeLaClase {} 
+~~~
+
+- Donde la palabra public indica que el alcance de la clase será público.
+- La palabra class indica que es una clase.
+- Y las llaves {} se usan para agrupar los bloques de código.
+
+Basado en lo anterior, a continuación, se relaciona un ejemplo sobre el diseño de la clase de producto con sus atributos y métodos:
+
+<br></br>
+<p align="center">
+<img src="/images/aplicacion-del-paradigma-orientado-a-objetos/007.svg" alt="Diagrama clase producto" />
+</p>
+
+En Java este diseño se representaría de la siguiente manera:
+
+**Implementación de la clase Producto en Java**
+
+![Implementación de la clase Producto en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/009.svg)
+
+La creación de un **objeto** en Java es equivalente a decir que se está instanciando una **clase**.Cuando se hace la instancia se comparten los atributos y métodos de esta. Una sola clase puede tener varias instancias.
+
+Tomando como ejemplo la clase **Producto** al instanciar un objeto estamos dando valores a sus atributos código, nombre y precio y accediendo a sus métodos **obtenerPrecio** y **calcularTotal**.
+
+Para instanciar un objeto de una clase en Java se utiliza la palabra reservada **new** y se crea el objeto del tipo de la clase así:
+
+~~~
+Producto p = new
+Producto ();
+Cuando instanciamos el objeto p este puede acceder a los métodos y atributos de la clase Producto 
+que en este caso serían obtenerPrecio y calcularTotal así:
+
+p.obtenerPrecio ();
+p.calcularTotal ();
+~~~
+
+### **Atributos y métodos de la clase**
+
+Los atributos de una clase son definidos según esta sintaxis: **[modifVisibilidad] tipo nombreVariable [= valorInicial];**
+
+**modifVisibilidad:** el modificador de visibilidad indica desde que parte del código se puede acceder a las variables o a los métodos y puede ser:
+
+- **public:**
+Indica que los atributos son accesibles desde cualquier lugar del programa. No hay restricciones en el alcance de los miembros de datos públicos.
+
+- **private:**
+Indica que los atributos sólo son accesibles dentro de la clase en la que se declaran.
+
+- **protected:**
+Indica que los atributos son accesibles dentro del mismo paquete o sub-clases en paquetes diferentes. Al heredar sí se puede usar desde la clase derivada.
+
+**tipo:** es el tipo de la variable, pudiendo ser un tipo básico o un objeto.
+
+A continuación, se relacionan los tipos de datos que existen en java:
+
+<img src="/images/aplicacion-del-paradigma-orientado-a-objetos/010.png" alt="Tipos de datos en Java" />
+
+
+**nombreVariable:** es el nombre que daremos a la variable, el cual debe cumplir con las siguientes convenciones:
+
+- Por convención, en Java, los nombres de las variables empiezan con una letra minúscula y si es una palabra compuesta la primera letra en **Mayúscula** con nomenclatura **camelCase**.
+
+- No pueden tener espacios ni iniciar con un número, ni caracteres especiales.
+- No puede ser el mismo que una palabra clave.
+- No deben tener el mismo nombre que otras variables cuyas declaraciones aparezcan en el mismo ámbito.
+
+A continuación se presentan algunos ejemplos:
+
+~~~
+primerNombre
+apellidoCliente
+edad
+[= valorInicial]; permite inicializar la variable con un valor-
+~~~
+
+~~~
+Se permite definir más de una variable, separándolas por coma, por ejemplo:
+
+public int a = 5, b, c = 4;
+
+Ejemplos de declaración de atributos o variables:
+
+public int edad =5;
+private char genero =’M’;
+private double estatura;
+Nota:todos los atributos terminan en punto y coma.
+
+Los métodos se definen la siguiente manera:
+
+[modifVisibilidad] tipo nombreMetodo (listaParámetros) {}
+~~~
+
+En los atributos y métodos para las clases también existen:
+
+- **Modificador de visibilidad:**
+Se aplican las mismas normas que para los atributos, se debe indicar el modificador de acceso, este puede ser público, privado o protegido.
+
+- **Tipo:**
+Es el tipo de valor devuelto por el método, pudiendo ser int, char, String, etc.
+
+- **Nombre del método:**
+Es el nombre que tendrá el método y debe cumplir con las siguientes convenciones: 
+Los nombres de los métodos deberían ser verbos, todo el verbo en minúscula. Se pueden agregar sustantivos con la primera letra en mayúscula. Ejemplo: revisarCuenta ()
+
+- **Lista de parámetros:**
+Dentro de los paréntesis se escriben los parámetros, los parámetros son los atributos que recibe el método para poder operar correctamente, puede o no tener parámetros.
+
+- **Cuerpo del método:**
+Para finalizar todo método debe llevar un par de llaves, que es donde se escribe el código a ejecutar. (Nota: a diferencia de los atributos, los métodos no finalizan con punto y coma).
+
+A continuación, se presentan algunos ejemplos de métodos:
+
+~~~
+public int obtenerEdad ()
+{
+return edad;
+}
+
+Este es un método público que retorna un valor entero, cuyo nombre es obtenerEdad, 
+no recibe parámetros y devuelve la edad.
+~~~
+
+~~~
+public void cambiarEdad (int laEdad)
+{
+edad = laEdad;
+}
+
+Este es un método público que no retorna ningún valor porque tiene la palabra reservada void, 
+su nombre es cambiarEdad y recibe un parámetro de tipo entero, en el cuerpo del método asigna 
+a la variable edad el valor del parámetro que viene almacenado en la variable laEdad.
+~~~
+
+### **Constructores y destructores**
+
+**El constructor** de una clase es un método estándar para inicializar los objetos de esa clase, a su vez es un destructor de un método que se invoca automáticamente cuando el objeto se destruye.
+
+Se habla de un constructor cuando se instancia un objeto y es necesario inicializar sus variables con valores correctos. Un constructor es un método perteneciente a la clase, que posee unas características especiales:
+
+- El nombre del constructor es igual que el nombre de la clase.
+- No tiene ningún retorno.
+- Se pueden crear varios, siempre y cuando tengan diferentes atributos.
+
+Dentro del código de un constructor generalmente suelen existir inicializaciones de variables y objetos, para conseguir que el objeto sea creado con dichos valores iniciales.  
+
+Para definir los constructores se emplea la siguiente sintaxis:
+
+~~~
+[modifVisibilidad] nombreConstructor (listaParámetros)]
+
+{
+
+}
+~~~
+
+**modifVisibilidad:**
+Se aplica las mismas normas que para atributos y métodos que debe indicar si son public, private o protected.
+
+**nombreConstructor:**
+Debe coincidir con el nombre de la clase.
+
+**listaParámetros:**
+Es la lista de los parámetros que tomará la función separados por comas y definidos cada uno de ellos como: tipo nombreParámetro
+
+Ejemplo: (int a, int b)
+
+
+El constructor posee un par de llaves, dentro de las cuales estará el código que se ejecutará al ser llamado el método.
+
+**Ejemplo de implementación de constructor en Java**
+
+![Ejemplo de implementación de constructor en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/011.jpg)
+
+En el ejemplo de la clase Producto se crea el constructor Producto que tiene el mismo nombre de la clase, con el modificador de visibilidad público y su lista de parámetros, el cual recibe los atributos y se los asigna a la variable de la clase.
+
+La palabra reservada **this** hace referencia a los miembros de la propia clase en el objeto actual; es decir, this se refiere al objeto actual sobre el que está actuando un método determinado y se utiliza siempre que se quiera hacer referencia al objetoactual de la clase.
+
+Un constructor sin parámetros es llamado **constructor vacío**. Si no se define ningún constructor, el compilador crea un constructor por defecto. Esto permite crear objetos con **“new Clase()”** sin argumentos, aunque no se defina ningún constructor.
+
+**Ejemplo de implementación de constructor vacio o por defecto en Java**
+
+![Ejemplo de implementación de constructor vacio o por defecto en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/012.jpg)
+
+Un destructor es un método opuesto a un constructor, este método en lugar de crear un objeto lo destruye, liberando la memoria de la computadora para que pueda ser utilizada por alguna otra variable u objeto.
+
+En Java no existen los destructores, esto es gracias al recolector de basura de la máquina virtual de Java. Como su nombre lo dice, el recolector de basura recolecta todas las variables u objetos que no se estén utilizando y que no haya ninguna referencia a ellos por una clase en ejecución, liberando así automáticamente la memoria de nuestra computadora.
+
+Aunque Java maneja de manera automática el recolector de basura, el usuario también puede decir en qué momento Java pase el recolector de basura con la instrucción.
+
+~~~
+System.gc ();
+~~~
+
+### **Métodos accesores y modificadores**
+
+De métodos y modificadores, hay dos tipos básicos esenciales de miembros de la clase: público (public) y privado (private).
+
+A los métodos y modificadores se puede acceder libremente a un miembro público, mediante un código definido fuera de su clase. Se puede acceder a un miembro privado solo por otros métodos definidos por su clase. Es a través del uso de miembros privados que el acceso está controlado.
+
+Restringir el acceso a los miembros de una clase es una parte fundamental de la programación orientada a objetos, ya que ayuda a evitar el mal uso de un objeto; no obstante, al permitir el acceso a datos privados solo a través de un conjunto de métodos bien definidos, puede evitar que se asignen valores incorrectos a esos datos.
+
+Como su nombre indica, los modificadores de acceso en Java ayudan a restringir el alcance de una clase, constructor, variable, método o miembro de datos.
+
+Hay cuatro tipos de modificadores de acceso disponibles en Java:
+
+![Ejemplo de implementación de constructor vacio o por defecto en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/013.svg)
+
+#### **Modificador de acceso por defecto (default)**
+
+Cuando no se especifica ningún modificador de acceso para una clase, método o miembro de datos, se dice estar teniendo **modificador de acceso default por defecto**.
+
+Los miembros de datos, clase o métodos que no se declaran utilizando ningún modificador de acceso; es decir, que tengan un modificador de acceso predeterminado, solo son accesibles dentro del mismo paquete.
+
+~~~
+class Producto {
+
+void mostrar ()
+{
+System.out.println(” Hola Mundo!”);
+}
+}
+~~~
+
+La clase **Producto** tiene modificador de acceso default al igual que el método mostrar, esto quiere decir que no podrán ser accedidas desde otro paquete.
+
+#### **Modificador de acceso privado (private)**
+
+El modificador de acceso privado se especifica con la palabra clave **private**. Los métodos o los miembros de datos declarados como privados sólo son accesibles dentro de la clase en la que se declaran. Además:
+
+- Ninguna de las otras clases del mismo paquete podrá acceder a los miembros.
+- Las clases e interfaces no se pueden declarar como privadas (private).
+
+~~~
+public class Producto {
+
+private void mostrar ()
+{
+System.out.println(” Hola Mundo!”);
+}
+}
+~~~
+
+En este ejemplo tenemos el método mostrar con el modificador privado, lo que quiere decir que si se llama a este método de otra clase no se visualizará.
+
+
+#### **Modificador de acceso protegido (protected)**
+
+El modificador de acceso protegido se especifica con la palabra clave **protected.** Además:
+
+- Los métodos o miembros de datos declarados como protected son accesibles dentro del mismo paquete o sub-clases en paquetes diferentes.
+
+~~~
+public class Producto {
+
+protected void mostrar ()
+{
+System.out.println(” Hola Mundo!”);
+}
+}
+~~~
+
+#### **Modificador de acceso público (public)**
+El modificador de acceso público se especifica con la palabra clave public. Además:
+
+El modificador de acceso público tiene el alcance más amplio entre todos los demás modificadores de acceso.
+Las clases, métodos o miembros de datos que se declaran públicos son accesibles desde cualquier lugar del programa.
+No hay restricciones en el alcance de los miembros de datos públicos.
+
+~~~
+public class Producto {
+
+public void mostrar ()
+{
+System.out.println(” Hola Mundo!”);
+}
+}
+~~~
+
+Siguiendo con el ejemplo de la clase **Producto**, en este caso al declarar el método mostrar como público permite acceder desde cualquier parte al método mostrar.
+
+#### **Métodos accesores**
+
+Son los métodos que permiten obtener o modificar los atributos de un objeto y son de dos tipos **get** y **set**.
+
+Los métodos **get** y **set**, son simples métodos que usamos en las clases para mostrar **(get)** o modificar **(set)** el valor de un atributo. El nombre del método siempre será **get** o **set** y a continuación el nombre del atributo, su modificador siempre es **public**, ya que se quiere mostrar o modificar desde fuera de la clase. Por ejemplo, **getNombre** o **setNombre**.
+
+~~~
+Sintaxis método get:
+
+public tipo_dato_atributo getAtributo (){
+
+return atributo;
+}
+~~~
+
+~~~
+Sintaxis método set:
+
+public void setAtributo (tipo_dato_atributo variable){
+this.atributo = variable;
+}
+~~~
+
+**Ejemplo de implementación de métodos get y set en Java**
+
+![Ejemplo de implementación de métodos get y set en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/014.jpg)
+
+
+En el ejemplo se muestra la clase **Producto** con sus atributos **codigo** y nombre, por cada uno de estos atributos encontramos sus métodos **get** y set para obtener y cambiar el valor de cada uno de ellos.
+
+### **Sobrecarga de métodos (overload)**
+
+Permite definir más de un constructor o método con el mismo nombre, con la condición de que no puede haber dos de ellos con el mismo número y tipo de parámetros. En resumen, la sobrecarga permite declarar métodos que se llamen igual pero que reciban parámetros diferentes (no puede haber 2 métodos con el mismo nombre y los mismos parámetros), por esta razón lo que define a qué método se ingresa, son los argumentos que se envían como parámetros.
+
+**Ejemplo de implementación de sobrecarga de constructores y métodos en Java**
+
+![Ejemplo de implementación de métodos get y set en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/015.jpg)
+
+En el ejemplo se muestra una sobrecarga de constructores y una de métodos. Existe sobrecarga en los constructores **Producto**, ya que se crearon dos con el mismo nombre, pero con diferentes parámetros; el mismo caso pasa con el método **descontarProducto**, que está creado dos veces, pero con diferentes parámetros.

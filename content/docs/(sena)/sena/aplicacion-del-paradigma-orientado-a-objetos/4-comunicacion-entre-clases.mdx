@@ -1,0 +1,116 @@
+---
+title: Comunicación entre clases
+full: false
+---
+
+Las clases, al igual que los objetos, no existen de modo aislado. La Orientación a Objetos (POO) intenta modelar aplicaciones del mundo real tan fielmente como sea posible y por lo tanto debe reflejar estas relaciones entre clases y objetos. Por consiguiente, a continuación, podrá observar la comunicación entre clases:
+
+**La comunicación entre clases es posible sólo a través de la parte pública de las clases correspondientes.**
+
+**Según G. Booch [Booch, 94]** existen tres clases básicas de relaciones entre los objetos:
+
+- Asociación
+- Agregación / Composición
+- Generalización / Especialización. HERENCIA
+
+### **Implementación de asociaciones**
+
+La implementación de asociación en Java se realiza mediante el uso de un campo de instancia. La relación puede ser bidireccional y cada clase tiene una referencia a la otra. La agregación y la composición son tipos de relaciones de asociación. A continuación, se explicitan los tipos de relaciones:
+
+#### **Asociación bidireccional**
+
+![Asociación bidireccional](/images/aplicacion-del-paradigma-orientado-a-objetos/016.svg)
+
+Un cliente tiene una cuenta corriente y una cuenta pertenece a un dueño.
+
+Para realizar la implantación en Java de esta asociación bidireccional lo que se hace es:
+
+En la clase **Cliente** crear una instancia de la clase **Cuenta** y en la clase **Cuenta** crear una instancia de la clase **Cliente** así:
+
+![Ejemplo asociación bidireccional en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/017.jpg)
+
+#### **Asociación unidireccional**
+
+![Ejemplo asociación bidireccional en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/018.svg)
+
+Un cliente tiene una cuenta corriente y una cuenta pertenece a un dueño.
+
+Para realizar la implantación en Java de esta asociación bidireccional lo que se hace es:
+
+En la clase **Cliente** crear una instancia de la clase **Cuenta** y en la clase **Cuenta** crear una instancia de la clase **Cliente** así:
+
+**Ejemplo asociación bidireccional en Java**
+
+![Ejemplo asociación bidireccional en Java](/images/aplicacion-del-paradigma-orientado-a-objetos/019.jpg)
+
+### **Implementación de composición/agregación**
+
+La agregación es un tipo de relación que comprende a las clases y sus diferentes componentes, constituyendo un todo, a su vez, la composición en cambio es un tipo de agregación, donde cada componente sólo puede pertenecer a un todo.
+
+La composición en Java consiste en crear una clase nueva agrupando objetos de clases que ya existen, los objetos contenidos se declaran con visibilidad private y se inicializan en el constructor de la clase.
+
+![Implementación de composición/agregación](/images/aplicacion-del-paradigma-orientado-a-objetos/020.svg)
+
+El anterior ejemplo implementado en Java quedaría de la siguiente manera:
+
+![Implementación de composición/agregación](/images/aplicacion-del-paradigma-orientado-a-objetos/021.jpg)
+
+La imagen muestra la creación de la clase **Torre** con un atributo de tipo **DiscoDuro**, con un constructor que instancia un objeto disco, si destruimos la instancia de tipo Torre se destruye la instancia de tipo **DiscoDuro**.
+
+La agregación en Java es la relación que existe entre dos clases donde la clase agregada contiene una referencia de otra clase.
+
+![Implementación de composición/agregación](/images/aplicacion-del-paradigma-orientado-a-objetos/022.svg)
+
+El siguiente código muestra cómo se hace la implementación del ejemplo anterior en Java:
+
+![Ejemplo de agregación en UML](/images/aplicacion-del-paradigma-orientado-a-objetos/023.jpg)
+
+La imagen muestra la creación de un atributo de tipo **Parlante** en la clase **Torre**, para vincular el objeto se crea un método ensamblar que recibe un parámetro de tipo parlante. En este caso si se destruye la instancia de tipo Torre no se destruye la instancia de tipo parlante.
+
+### **Implementación de herencia**
+
+La herencia es el mecanismo por el que se crean nuevos objetos definidos en términos de objetos ya existentes. Por ejemplo, si se tiene la clase **Persona**, se puede crear la subclase **Empleado**, que es una extensión de **Persona**.
+
+~~~
+class Empleado extends Persona {
+
+int ventas;
+}
+~~~
+
+La herencia permite compartir automáticamente métodos y datos entre clases, subclases y objetos.
+
+En Java esto es posible mediante el uso de la palabra clave **extends**. Por lo tanto, la subclase se añade (se extiende) a la superclase.
+
+En el ejemplo anterior, la clase **Empleado** extiende de la clase principal Persona heredando todos sus métodos y atributos.   
+
+**Ejemplo de herencia en UML**
+
+![Ejemplo de herencia en UML](/images/aplicacion-del-paradigma-orientado-a-objetos/024.svg)
+
+La **superClase** Persona tiene los atributos de nombre, apellido, documento, que también los necesita la clase **Cliente** y la clase **Empleado**. Una de las ventajas de la herencia es la reutilización de código, en este caso las dos clases hijas no necesitan volver a colocar los atributos porque ya los hereda de la clase persona.
+
+Implementado la relación de herencia del ejemplo **Persona, Cliente y Empleado** en Java sería:
+
+**1. Se crea la clase padre o superClase Persona, con sus atributos, constructores, métodos get y set.**
+
+![](/images/aplicacion-del-paradigma-orientado-a-objetos/025.jpg)
+
+**2. Se crea la clase Cliente con su propio atributo categoría y su método mostrar datos, para heredar los atributos de la superClase Persona utilizamos la palabra reservada extends así:**
+
+![](/images/aplicacion-del-paradigma-orientado-a-objetos/026.jpg)
+
+Cuando se extiende de la clase **Persona** hay que implementar el constructor que trae los atributos de nombre, apellido y documento de la clase persona, al hacer clic en el bombillo que señala la flecha azul o presionar Alt + Enter se crea el constructor
+
+![](/images/aplicacion-del-paradigma-orientado-a-objetos/027.jpg)
+
+La imagen muestra la herencia de la clase persona con la creación del constructor.
+
+![](/images/aplicacion-del-paradigma-orientado-a-objetos/028.jpg)
+
+La imagen muestra la clase **Cliente** completa reutilizando atributos y métodos de la superClase **Persona** después de realizar la herencia.
+
+![](/images/aplicacion-del-paradigma-orientado-a-objetos/029.jpg)
+
+La imagen muestra la implementación de la herencia de la clase **Empleado.**
+

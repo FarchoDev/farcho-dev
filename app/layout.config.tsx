@@ -24,6 +24,11 @@ export const baseOptions: BaseLayoutProps = {
       active: 'nested-url',
     },
     {
+      text: 'Sena',
+      url: '/docs/sena/',
+      active: 'nested-url',
+    },
+    {
       text: 'Contacto',
       url: '/contact',
       active: 'nested-url',

@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 const courses = [
   {
     title: "Curso Git",
-    link: "/cursos/curso-git/content",
+    link: "./docs/cursos/curso-git/content",
     images: {
       light: "/images/index-images/cursos/git-logo.svg",
       dark: "/images/index-images/cursos/git-logo-dark.svg",
@@ -16,7 +16,7 @@ const courses = [
   },
   {
     title: "Curso Github",
-    link: "/cursos/curso-github/content",
+    link: "./docs/cursos/curso-github/content",
     images: {
       light: "/images/index-images/cursos/github-logo.svg",
       dark: "/images/index-images/cursos/github-logo-dark.svg",
@@ -24,7 +24,7 @@ const courses = [
   },
   {
     title: "Curso Conventional Commits",
-    link: "/cursos/curso-conventional-commits/content",
+    link: "./docs/cursos/curso-conventional-commits/content",
     images: {
       light: "/images/index-images/cursos/conventional-commits-logo.svg",
       dark: "/images/index-images/cursos/conventional-commits-logo-dark.svg",

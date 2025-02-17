@@ -10,12 +10,27 @@ import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 export const baseOptions: BaseLayoutProps = {
   nav: {
     // can be JSX too!
-    title: 'My App',
+    title: 'Farcho Dev',
   },
   links: [
     {
-      text: 'Documentation',
+      text: 'Inicio',
+      url: '/',
+      active: 'nested-url',
+    },
+    {
+      text: 'Contenido',
       url: '/docs',
+      active: 'nested-url',
+    },
+    {
+      text: 'Contacto',
+      url: '/contact',
+      active: 'nested-url',
+    },
+    {
+      text: 'Acerca de',
+      url: '/about',
       active: 'nested-url',
     },
   ],

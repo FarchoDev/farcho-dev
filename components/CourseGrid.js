@@ -43,7 +43,7 @@ const documents = [
   },
   {
     title: "Redes y networking",
-    link: "./sena/conceptos-basicos-de-redes-y-networking/1-introduccion",
+    link: "./docs/sena/conceptos-basicos-de-redes-y-networking/1-introduccion",
     images: {
       light: "/images/index-images/documentacion/002.svg",
       dark: "/images/index-images/documentacion/002.svg"

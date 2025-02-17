@@ -51,7 +51,7 @@ const documents = [
   },
   {
     title: "Paradigma orientado a objetos",
-    link: "./sena/aplicacion-del-paradigma-orientado-a-objetos/1-introduccion",   
+    link: "./docs/sena/aplicacion-del-paradigma-orientado-a-objetos/1-introduccion",   
     images: {
       light: "/images/index-images/documentacion/006.svg",
       dark: "/images/index-images/documentacion/006.svg"

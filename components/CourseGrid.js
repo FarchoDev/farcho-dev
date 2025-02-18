@@ -80,6 +80,22 @@ const documents = [
       light: "/images/index-images/documentacion/005.svg",
       dark: "/images/index-images/documentacion/005.svg"
     }
+  },
+  {
+    title: "Fundamentos de calidad del software",
+    link: "/docs/sena/fundamentos-de-la-calidad-del-software/1-introduccion",
+    images: {
+      light: "/images/index-images/documentacion/007.svg",
+      dark: "/images/index-images/documentacion/007.svg"
+    }
+  },
+  {
+    title: "Aplicación de pruebas de software",
+    link: "/docs/sena/actividades-de-documentacion-y-entrega-de-software-en-procesos-de-implantacion/1-introduccion",
+    images: {
+      light: "/images/index-images/documentacion/008.svg",
+      dark: "/images/index-images/documentacion/008.svg"
+    }
   }
 ];
 

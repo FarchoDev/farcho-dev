@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
-// Definición de cursos y documentación
+// Definición de cursos, documentación y formación complementaria
 const courses = [
   {
     title: "Curso Git",
@@ -72,30 +72,25 @@ const documents = [
       light: "/images/index-images/documentacion/003.svg",
       dark: "/images/index-images/documentacion/003.svg"
     }
+  }
+];
+
+const complementaryTraining = [
+  {
+    title: "Metodologías Ágiles",
+    link: "./docs/formacion-complementaria/metodologias-agiles/content",
+    images: {
+      light: "/images/index-images/formacion/agile.svg",
+      dark: "/images/index-images/formacion/agile-dark.svg",
+    },
   },
   {
-    title: "Documentación y entrega",
-    link: "/docs/sena/actividades-de-documentacion-y-entrega-de-software-en-procesos-de-implantacion/1-introduccion",
+    title: "Ciberseguridad",
+    link: "./docs/formacion-complementaria/ciberseguridad/content",
     images: {
-      light: "/images/index-images/documentacion/005.svg",
-      dark: "/images/index-images/documentacion/005.svg"
-    }
-  },
-  {
-    title: "Fundamentos de calidad del software",
-    link: "/docs/sena/fundamentos-de-la-calidad-del-software/1-introduccion",
-    images: {
-      light: "/images/index-images/documentacion/007.svg",
-      dark: "/images/index-images/documentacion/007.svg"
-    }
-  },
-  {
-    title: "Aplicación de pruebas de software",
-    link: "/docs/sena/actividades-de-documentacion-y-entrega-de-software-en-procesos-de-implantacion/1-introduccion",
-    images: {
-      light: "/images/index-images/documentacion/008.svg",
-      dark: "/images/index-images/documentacion/008.svg"
-    }
+      light: "/images/index-images/formacion/cybersecurity.svg",
+      dark: "/images/index-images/formacion/cybersecurity-dark.svg",
+    },
   }
 ];
 
@@ -111,7 +106,7 @@ function GridItem({ title, link, images }) {
   return (
     <div className="text-center p-4 border rounded-lg shadow-md bg-white dark:bg-gray-800">
       <div className="w-40 h-40 mx-auto flex items-center justify-center">
-        <img src={imageSrc} alt={title} className="w-full h-full  rounded-lg" />
+        <img src={imageSrc} alt={title} className="w-full h-full rounded-lg" />
       </div>
       <p className="text-lg font-semibold mt-2">{title}</p>
       <Link href={link} passHref>
@@ -123,7 +118,7 @@ function GridItem({ title, link, images }) {
   );
 }
 
-// Componente de la cuadrícula de cursos
+// Componentes de la cuadrícula
 export function CourseGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -134,12 +129,21 @@ export function CourseGrid() {
   );
 }
 
-// Componente de la cuadrícula de documentación
 export function DocumentGrid() {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {documents.map((doc, index) => (
         <GridItem key={index} {...doc} />
+      ))}
+    </div>
+  );
+}
+
+export function ComplementaryTrainingGrid() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {complementaryTraining.map((training, index) => (
+        <GridItem key={index} {...training} />
       ))}
     </div>
   );

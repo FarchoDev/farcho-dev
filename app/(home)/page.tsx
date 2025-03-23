@@ -7,7 +7,7 @@ export default function HomePage() {
       <h1 className="text-3xl font-bold mb-4">Bienvenido a la Plataforma 🚀</h1>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">📚 Cursos</h2>
+        <h2 className="text-2xl font-semibold mb-2">Cursos</h2>
         <p className="text-muted mb-4">
           Explora nuestros cursos y documentación para mejorar tus habilidades.
         </p>
@@ -15,7 +15,15 @@ export default function HomePage() {
       </section>
       
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">📖 Documentación</h2>
+        <h2 className="text-2xl font-semibold mb-2">Análisis y Desarrollo de Software - SENA</h2>
+        <p className="text-muted mb-4">
+          Consulta la documentación técnica detallada.
+        </p>
+        <DocumentGrid />
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-2">Formación complementaria - SENA</h2>
         <p className="text-muted mb-4">
           Consulta la documentación técnica detallada.
         </p>
